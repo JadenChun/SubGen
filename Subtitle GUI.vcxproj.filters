@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="displayText.cpp">
+      <Filter>GUI_Class</Filter>
+    </ClCompile>
+    <ClCompile Include="subtitlegui.cpp">
+      <Filter>GUI_Class</Filter>
+    </ClCompile>
+    <ClCompile Include="subtitleUpdater.cpp">
+      <Filter>GUI_Updater_Class</Filter>
+    </ClCompile>
+    <ClCompile Include="GetDefaultOutputDeviceID.cpp">
+      <Filter>Speech_Recognition_Class</Filter>
+    </ClCompile>
+    <ClCompile Include="AzureSpeechAPI.cpp">
+      <Filter>Speech_Recognition_Class</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingClass.cpp">
+      <Filter>GUI_Class</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseAPIClass.cpp">
+      <Filter>SQlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Documents\APU SE\FYP\SOURCE CODE\sqlite\sqlite-amalgamation-3390400\sqlite3.c">
+      <Filter>SQlite</Filter>
+    </ClCompile>
+    <ClCompile Include="dbMemory.cpp">
+      <Filter>SQlite</Filter>
+    </ClCompile>
+    <ClCompile Include="historyPage.cpp">
+      <Filter>GUI_Class</Filter>
+    </ClCompile>
+    <ClCompile Include="deleteRecordPage.cpp">
+      <Filter>GUI_Class</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="AzureSpeechAPI.h">
+      <Filter>Speech_Recognition_Class</Filter>
+    </ClInclude>
+    <ClInclude Include="buffer.h">
+      <Filter>Speech_Recognition_Class</Filter>
+    </ClInclude>
+    <ClInclude Include="FIFO_Array.h">
+      <Filter>Speech_Recognition_Class</Filter>
+    </ClInclude>
+    <ClInclude Include="RtAudioCallbackFunction.h">
+      <Filter>Speech_Recognition_Class</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseAPIClass.h">
+      <Filter>SQlite</Filter>
+    </ClInclude>
+    <ClInclude Include="dbMemory.h">
+      <Filter>SQlite</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Subtitle GUI.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="displayText.h">
+      <Filter>GUI_Header</Filter>
+    </QtMoc>
+    <QtMoc Include="subtitlegui.h">
+      <Filter>GUI_Header</Filter>
+    </QtMoc>
+    <QtMoc Include="subtitleUpdater.h">
+      <Filter>GUI_Updater_Class</Filter>
+    </QtMoc>
+    <QtMoc Include="SettingClass.h">
+      <Filter>GUI_Header</Filter>
+    </QtMoc>
+    <QtMoc Include="historyPage.h">
+      <Filter>GUI_Header</Filter>
+    </QtMoc>
+    <QtMoc Include="deleteRecordPage.h">
+      <Filter>GUI_Header</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="subtitlegui.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Subtitle GUI.ico" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="GUI_Class">
+      <UniqueIdentifier>{e1161de3-dca7-4ff8-a7ea-8f3a4511b51c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI_Designer">
+      <UniqueIdentifier>{db8c14f2-2336-48cd-8fb7-e40d71dcdf34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI_Header">
+      <UniqueIdentifier>{d8185d7e-89b0-4dde-b6ce-096fe487c136}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI_Updater_Class">
+      <UniqueIdentifier>{dec8e1c5-04a0-4efe-9a2e-24d0d2a9d231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Speech_Recognition_Class">
+      <UniqueIdentifier>{85b8313f-d450-49db-88b7-2a65bcdc7413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SQlite">
+      <UniqueIdentifier>{201906a3-34e2-4f2d-a938-96eb2fb45fd3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="subtitlegui.ui">
+      <Filter>UI_Designer</Filter>
+    </QtUic>
+    <QtUic Include="displayText.ui">
+      <Filter>UI_Designer</Filter>
+    </QtUic>
+    <QtUic Include="SettingClass.ui">
+      <Filter>UI_Designer</Filter>
+    </QtUic>
+    <QtUic Include="historyPage.ui">
+      <Filter>UI_Designer</Filter>
+    </QtUic>
+    <QtUic Include="deleteRecordPage.ui">
+      <Filter>UI_Designer</Filter>
+    </QtUic>
+  </ItemGroup>
+</Project>

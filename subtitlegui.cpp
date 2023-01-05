@@ -82,6 +82,12 @@ void SubtitleGUI::saveNewAPIConfig(std::string key, std::string region, std::str
 }
 
 void SubtitleGUI::on_startButton_clicked() {
+    AzureSpeechAPI* speech = AzureSpeechAPI::getInstance();
+    if (speech->getKey() == "" || speech->getRegion()== "") {
+        QMessageBox::warning(this, "Speech Engine Error!", "Please set the azure speech services information in setting to continue.");
+        ui.startButton->setChecked(false);
+        return;
+    }
     if (recognitionIsRunning) {
         ui.startButton->setIcon(QIcon("icon/shutdown-icon.png"));
         QGraphicsDropShadowEffect* effect = new QGraphicsDropShadowEffect();
@@ -92,6 +98,7 @@ void SubtitleGUI::on_startButton_clicked() {
         emit stop_recognition();
         delete textOutput;
         recognitionIsRunning = !recognitionIsRunning;
+        ui.languageInfoLabel->setText("Click the button to start recognition.");
         return;
     }
     recognitionIsRunning = !recognitionIsRunning;
@@ -101,6 +108,7 @@ void SubtitleGUI::on_startButton_clicked() {
     effect->setBlurRadius(20);
     effect->setOffset(0);
     ui.startButton->setGraphicsEffect(effect);
+    ui.languageInfoLabel->setText("Click the button to stop recognition.");
 
     QSize size = qApp->screens()[0]->size();
     int x = size.width() * 0.05;
@@ -108,7 +116,7 @@ void SubtitleGUI::on_startButton_clicked() {
     int width = size.width() * 0.9;
     int height = size.height() * 0.5;
 
-    AzureSpeechAPI* speech = AzureSpeechAPI::getInstance();
+    
     int rowNo = (speech->getEngineMode() == 0) ? 1 : 2;
     if (rowNo == 2)rowNo = (speech->getShowSingleLanguage()) ? 1 : 2;
     textOutput = new displayText(rowNo);
@@ -142,7 +150,9 @@ void SubtitleGUI::on_modeSwitch_clicked(bool state) {
     textUpdater->updateEngineMode(mode);
     if (settingPage != nullptr)settingPage->updateEngineMode(mode);
     if (recognitionIsRunning) {
+        AzureSpeechAPI* speech = AzureSpeechAPI::getInstance();
         int rowNo = (mode == 0) ? 1 : 2;
+        if (rowNo == 2)rowNo = (speech->getShowSingleLanguage()) ? 1 : 2;
         textOutput->updateLabel(rowNo);
         textUpdater->close();
         QThread* thread = new QThread;

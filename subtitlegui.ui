@@ -133,7 +133,7 @@ QPushButton:checked {
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Click the button to start translation.</string>
+         <string>Click the button to start recognition.</string>
         </property>
        </widget>
       </item>

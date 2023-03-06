@@ -3,9 +3,9 @@
 This project is aiming to provide real time captioning for any content with the help of speech transcription and translation technology. SubGen is capable to perform real time captioning for every application that runs on windows.
 ### How it works?
 1. The audio output of the system is being streamed to the Microsoft Azure speech service.
-2. The transcription result from the speech services will then being displayed in the subtitle window.
+2. The transcription result from the speech services will then be displayed in the subtitle window.
 ### Supported Platform
-Windows: Tested in Windows 10 and Windows 11
+Windows: Tested with Windows 10 and Windows 11
 ### Technical Choice
 1. Language: C++
 2. UI Framework: [Qt](https://www.qt.io/product/framework)
@@ -18,7 +18,7 @@ Windows: Tested in Windows 10 and Windows 11
 3. Run the subgen.exe from the file.
 4. Add your own key and region for Azure speech service. 
 ### About Microsoft Azure Speech Service
-You will required a Microsoft Azure account to use the speech service. You can register a free account at [Microsoft](https://azure.microsoft.com/en-us/free/) and create the speech resource to get the key and region information.
+You will require a Microsoft Azure account to use the speech service. You can register a free account at [Microsoft](https://azure.microsoft.com/en-us/free/) and create the speech resource to get the key and region information.
 ```diff
 -Noted that the captioning will not work without the Azure Speech Service
 ```

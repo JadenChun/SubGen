@@ -31,3 +31,5 @@ setting
 subtitle window
 > <img src="https://user-images.githubusercontent.com/69668411/223098285-e527b56c-cd9e-47fe-93ca-9e4220907279.png">
 
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

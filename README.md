@@ -14,7 +14,7 @@ Windows: Tested in Windows 10 and Windows 11
 
 ## Setup Guide
 1. Install [VB-Cable](https://vb-audio.com/Cable/).
-2. Download subgen.zip and extract it.
+2. Download SubGen.zip from [here](https://github.com/JadenChun/SubGen/releases/tag/v1.0) and extract it.
 3. Run the subgen.exe from the file.
 4. Add your own key and region for Azure speech service. 
 ### About Microsoft Azure Speech Service

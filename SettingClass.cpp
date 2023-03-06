@@ -8,6 +8,7 @@ SettingClass::SettingClass(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	this->setWindowTitle("Setting");
 	AzureSpeechAPI *API = API->getInstance();
 	key = QString::fromStdString(API->getKey());
 	region = QString::fromStdString(API->getRegion());
@@ -27,8 +28,8 @@ SettingClass::SettingClass(QWidget *parent)
 	}
 	ui.detectionLanguageComboBox->setCurrentText(detectionLanguage);
 	ui.translationLanguageComboBox->setCurrentText(translationLanguage);
-	recordState = API->getSavingResultState();
-	ui.saveRecordCheckBox->setChecked(recordState);
+	/*recordState = API->getSavingResultState();
+	ui.saveRecordCheckBox->setChecked(recordState);*/
 	engineMode = API->getEngineMode();
 	ui.engineModeComboBox->setCurrentIndex(engineMode);
 	if (engineMode == 0) {
@@ -41,7 +42,7 @@ SettingClass::SettingClass(QWidget *parent)
 	connect(ui.APIRegionInput, SIGNAL(textChanged(QString)), this, SLOT(checkInputChanges()));
 	connect(ui.detectionLanguageComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(checkInputChanges()));
 	connect(ui.translationLanguageComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(checkInputChanges()));
-	connect(ui.saveRecordCheckBox, SIGNAL(stateChanged(int)), this, SLOT(checkInputChanges()));
+	//connect(ui.saveRecordCheckBox, SIGNAL(stateChanged(int)), this, SLOT(checkInputChanges()));
 	connect(ui.engineModeComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(checkInputChanges()));
 	connect(ui.showSingleLanguageCheckBox, SIGNAL(stateChanged(int)), this, SLOT(checkInputChanges()));
 }
@@ -62,7 +63,8 @@ void SettingClass::on_saveButton_clicked() {
 		recognitionLanguageCode = (index.first == detectionLanguage.toStdString()) ? index.second.recognitionCode : recognitionLanguageCode;
 		translationLanguageCode = (index.second.name == translationLanguage.toStdString()) ? index.second.translationCode : translationLanguageCode;
 	}
-	recordState = ui.saveRecordCheckBox->isChecked();
+	//recordState = ui.saveRecordCheckBox->isChecked();
+	recordState = false;
 	std::string recordStateStr = (recordState) ? "1" : "0";
 	engineMode = ui.engineModeComboBox->currentIndex();
 	showSingleLanguage = ui.showSingleLanguageCheckBox->isChecked();
@@ -89,7 +91,6 @@ void SettingClass::checkInputChanges()
 		ui.APIRegionInput->text() != region ||
 		ui.detectionLanguageComboBox->currentText() != detectionLanguage || 
 		ui.translationLanguageComboBox->currentText() != translationLanguage || 
-		ui.saveRecordCheckBox->isChecked() != recordState ||
 		ui.engineModeComboBox->currentIndex() != engineMode ||
 		ui.showSingleLanguageCheckBox->isChecked() != showSingleLanguage
 		) 

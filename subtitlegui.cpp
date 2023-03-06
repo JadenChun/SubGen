@@ -6,8 +6,10 @@ SubtitleGUI::SubtitleGUI(QWidget *parent)
     : QWidget(parent)
 {
     ui.setupUi(this);
+    this->setWindowTitle("SubGen");
+    /*
     ui.historyButton->setIcon(QIcon("icon/speech-to-text-icon.png"));
-    ui.historyButton->setToolTip("History");
+    ui.historyButton->setToolTip("History");*/
     ui.settingButton->setIcon(QIcon("icon/setting-icon.png"));
     ui.settingButton->setToolTip("Setting");
     ui.startButton->setText("");

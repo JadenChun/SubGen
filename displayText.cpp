@@ -6,6 +6,7 @@ displayText::displayText(int row, QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	this->setWindowTitle("Subtitle");
 	QSize size = qApp->screens()[0]->size();
 	QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui.widget->layout());
 	for (int i = 0; i < row; i++) {

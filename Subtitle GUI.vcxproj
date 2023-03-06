@@ -56,9 +56,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <LibraryPath>C:\Users\LEVEL51\Documents\APU SE\FYP\SOURCE CODE\rtaudio-5.2.0\Debug;$(LibraryPath)</LibraryPath>
+    <TargetName>SubGen</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <LibraryPath>C:\Users\LEVEL51\Documents\APU SE\FYP\SOURCE CODE\rtaudio-5.2.0\Release;$(LibraryPath)</LibraryPath>
+    <TargetName>SubGen</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

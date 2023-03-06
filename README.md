@@ -1,4 +1,4 @@
-# Real time caption generator using Microsoft Azure speech services (SubGen)
+# Real time caption generator using Microsoft Azure speech services
 ## Overview
 This project is aiming to provide real time captioning for any content with the help of speech transcription and translation technology. SubGen is capable to perform real time captioning for every application that runs on windows.
 ### How it works?
